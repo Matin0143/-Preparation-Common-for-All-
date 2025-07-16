@@ -1,0 +1,10 @@
+# Authenticate Docker to ECR
+aws ecr get-login-password | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
+
+# Tag and push backend
+docker tag flask-backend <account_id>.dkr.ecr.<region>.amazonaws.com/flask-backend
+docker push <account_id>.dkr.ecr.<region>.amazonaws.com/flask-backend
+
+# Tag and push frontend
+docker tag express-frontend <account_id>.dkr.ecr.<region>.amazonaws.com/express-frontend
+docker push <account_id>.dkr.ecr.<region>.amazonaws.com/express-frontend
