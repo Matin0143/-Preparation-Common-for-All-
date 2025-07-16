@@ -1,0 +1,2 @@
+sudo apt update && sudo apt install -y docker.io git
+sudo usermod -aG docker $USER && newgrp docker
